@@ -49,13 +49,13 @@ const arrow_right = document.querySelector('.arrow_right')
 
 // ARROW INTERACTION
 arrow_left.addEventListener('click', () => {
-  console.log('left')
   moveToPreviousSlide()
+  updateDots()
 })
 
 arrow_right.addEventListener('click', () => {
-  console.log('right')
   moveToNextSlide()
+  updateDots()
 })
 
 // DOTS
@@ -67,4 +67,14 @@ for (let i = 0; i < dotNumber; i++) {
   const dot = document.createElement('div')
   dot.classList.add('dot')
   dots.appendChild(dot)
+}
+
+function updateDots() {
+  const allDots = document.querySelectorAll('.dot')
+
+  allDots.forEach((dot) => {
+    dot.classList.remove('dot_selected')
+  })
+
+  allDots[currentSlideIndex].classList.add('dot_selected')
 }
