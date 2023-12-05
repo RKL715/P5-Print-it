@@ -58,6 +58,8 @@ arrow_right.addEventListener('click', () => {
   updateDots()
 })
 
+arrow_left.style.cursor = 'pointer'
+arrow_right.style.cursor = 'pointer'
 // DOTS
 
 const dots = document.querySelector('.dots')
