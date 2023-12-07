@@ -31,7 +31,7 @@ function updateSlide(index) {
 
 // MOVING IMG
 
-let currentSlideIndex = 0
+currentSlideIndex = 0
 
 function moveToPreviousSlide() {
   currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length
@@ -39,8 +39,13 @@ function moveToPreviousSlide() {
 }
 
 function moveToNextSlide() {
-  currentSlideIndex = (currentSlideIndex + 1) % slides.length
-  updateSlide(currentSlideIndex)
+  if (currentSlideIndex > 2) {
+    currentSlideIndex = 0
+    updateSlide(currentSlideIndex)
+  } else {
+    currentSlideIndex = currentSlideIndex + 1
+    updateSlide(currentSlideIndex)
+  }
 }
 
 // ARROW
